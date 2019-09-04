@@ -1,0 +1,53 @@
+<nav class="mb-5">
+    <ol class="breadcrumb"> 
+        <li class="breadcrumb-item"><a routerLinK="/livros">Home</a></li>
+        <li class="breadcrumb-item active">Livros</li>
+    </ol>
+</nav>
+
+<div class="row mb-6">
+    <div class="col-md">
+        <h1 class="h2 border-left pl-2">
+            Livros
+        </h1>
+    </div>
+    <div class="col-md-2">
+        <button (click)="ordenarPorTitulos()" class="btn btn-success float-right">
+            Título Ascendente
+        </button>
+    </div>
+    <div class="col-md-2">
+        <button (click)="ordenarPorAutor()" class="btn btn-success float-right">
+            Autor Ascendente
+        </button>
+    </div>
+    <div class="col-md-2">
+        <button (click)="ordenarPorEdicao()" class="btn btn-success float-right">
+            Edição Descendente 
+        </button>
+    </div>
+</div>
+
+<table class="table table-hover">   
+    <thead> 
+        <tr class="bg-primary text-light">
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Edição</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let livro of livros">
+            <td>
+                <strong>{{livro.title}}</strong>
+            </td>
+            <td>
+                <strong>{{livro.authorName}}</strong>
+            </td>
+            <td>
+                <strong>{{livro.editionYear}}</strong>
+            </td>
+        </tr>
+    </tbody>
+</table> 
+ 
